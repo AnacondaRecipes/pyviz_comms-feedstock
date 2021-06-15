@@ -15,26 +15,36 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=2.7
     - param
     - pip
-    - jupyter-packaging
-    - jupyterlab
+    - jupyter-packaging >=0.7.9
+    - jupyterlab >=3.0
     - notebook
+    - setuptools
+    - twine
+    - rfc3986
+    - keyring
+    - wheel
   run:
-    - python
+    - python >=2.7
     - param
 
 test:
   imports:
     - pyviz_comms
+  requires:
+    - pip
+  commnads:
+    - pip check
 
 about:
   home: https://www.holoviz.org
   summary: Bidirectional communication for PyViz
-  license: BSD 3-Clause
+  license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
+  dev_url: https://github.com/holoviz/pyviz_comms
 
 extra:
   recipe-maintainers:
