@@ -12,7 +12,7 @@ build:
   number: 0
   noarch: python
   script:
-    - {{ PYTHON }} -m pip install . --no-deps -vv
+    - {{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation
 
 requirements:
   host:
@@ -21,14 +21,13 @@ requirements:
     - pip
     - jupyter-packaging >=0.7.9,<0.8
     - jupyterlab >=3.0,<4
-    - notebook
-    - setuptools
+    - setuptools >=40.8.0
     - twine
     - rfc3986
     - keyring
     - wheel
   run:
-    - python
+    - python >=3.7
     - param
 
 test:
