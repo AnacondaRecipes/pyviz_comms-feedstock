@@ -1,4 +1,4 @@
-{% set version = "2.1.0" %}
+{% set version = "2.3.0" %}
 
 package:
   name: pyviz_comms
@@ -6,20 +6,21 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pyviz_comms/pyviz_comms-{{ version }}.tar.gz
-  sha256: f4a7126f318fb6b964fef3f92fa55bc46b9218f62a8464a8b18e968b3087dbc0
+  sha256: 44709b2e639e84eb1ae7be5eaf3e28a9be7932d29a8cefce1cd603cb3904ad9c
 
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script:
+    - {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python >=2.7
+    - python
     - param
     - pip
-    - jupyter-packaging >=0.7.9
-    - jupyterlab >=3.0
+    - jupyter-packaging ~=0.7.9
+    - jupyterlab ~=3.0
     - notebook
     - setuptools
     - twine
@@ -27,7 +28,7 @@ requirements:
     - keyring
     - wheel
   run:
-    - python >=2.7
+    - python
     - param
 
 test:
@@ -40,7 +41,7 @@ test:
 
 about:
   home: https://www.holoviz.org
-  summary: Bidirectional communication for PyViz
+  summary: Bidirectional notebook communication for HoloViz libraries
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
@@ -50,3 +51,5 @@ extra:
   recipe-maintainers:
     - jlstevens
     - philippjfr
+  skip-lints:
+    - host_section_needs_exact_pinnings
