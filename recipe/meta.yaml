@@ -40,7 +40,7 @@ test:
     - pip check
 
 about:
-  home: https://www.holoviz.org
+  home: https://holoviz.org
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
