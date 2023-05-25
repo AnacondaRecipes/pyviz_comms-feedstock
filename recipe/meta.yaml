@@ -24,7 +24,7 @@ requirements:
     - setuptools >=40.8.0
     - wheel
   run:
-    - python >=3.7
+    - python
     - param
 
 test:
