@@ -1,4 +1,4 @@
-{% set version = "2.3.0" %}
+{% set version = "3.0.0" %}
 
 package:
   name: pyviz_comms
@@ -6,26 +6,26 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pyviz_comms/pyviz_comms-{{ version }}.tar.gz
-  sha256: 44709b2e639e84eb1ae7be5eaf3e28a9be7932d29a8cefce1cd603cb3904ad9c
+  sha256: f4ca91e4157a64e3abed7cc249e60b9a8d2532f8832f1cb075914d19337d2ba6
 
 build:
   number: 0
-  skip: true  # [py<37]
+  skip: true  # [py<38 or s390x]
   script:
     - {{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation
 
 requirements:
   host:
     - python
-    - param
+    - hatchling >=1.5.0
+    - hatch-nodejs-version
+    - hatch-jupyter-builder >=0.8.2
     - pip
-    - jupyter-packaging >=0.7.9,<0.8
-    - jupyterlab >=3.0,<4
-    - setuptools >=40.8.0
-    - wheel
   run:
     - python
     - param
+  run_constrained:
+    - jupyterlab >=4,<5
 
 test:
   imports:
