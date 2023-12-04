@@ -24,6 +24,8 @@ requirements:
   run:
     - python
     - param
+  run_constrained:
+    - jupyterlab >=4,<5
 
 test:
   imports:
