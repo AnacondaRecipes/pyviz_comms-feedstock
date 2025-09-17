@@ -1,11 +1,12 @@
 {% set version = "3.0.6" %}
+{% set name = "pyviz_comms" %}
 
 package:
-  name: pyviz_comms
+  name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/p/pyviz_comms/pyviz_comms-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 73d66b620390d97959b2c4d8a2c0778d41fe20581be4717f01e46b8fae8c5695
 
 build:
